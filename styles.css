@@ -53,6 +53,15 @@ h1{
 #score{
     font-size: 7rem;
 }
+.scoreDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.4rem;
+    color: white;
+}
 .greenBackground{
     background-color: rgb(9, 218, 6);
 }

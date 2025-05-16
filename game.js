@@ -6,6 +6,12 @@ const playerScore = document.getElementById("player_choice")
 const computerScore = document.getElementById("computer_choice")
 const result = document.getElementById("score")
 const body = document.body
+const scoreBoard = document.getElementById("scoreDisplay")
+const playerScoreDisplay = document.getElementById("playerScoreDisplay")
+const computerScoreDisplay = document.getElementById("computerScoreDisplay")
+let playerScoreCount = 0
+let computerScoreCount = 0
+
 
 const playgame = (player_choice) => {
     const computer_choice = choices[Math.floor(Math.random() * choices.length)]
@@ -37,9 +43,13 @@ const playgame = (player_choice) => {
     switch(score){
         case "You win!":
             body.classList.add("greenBackground") 
+            playerScoreCount++
+            playerScoreDisplay.textContent = playerScoreCount
             break
         case "You lose!":
             body.classList.add("redBackground")
+            computerScoreCount++
+            computerScoreDisplay.textContent = computerScoreCount
             break
         case "It's a tie!":
             body.classList.add("brownBackground")
@@ -48,3 +58,5 @@ const playgame = (player_choice) => {
             
     }
 }
+
+window.playgame = playgame;
